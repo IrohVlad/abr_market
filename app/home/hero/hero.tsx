@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Button from "../../components/button/button"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
           <span className="relative after:block after:w-full after:absolute after:bottom-0 after:h-[7px] after:bg-orange">All-Trade</span> - абразивные материалы для вас 
           </h1>
           
-          <Button className="mt-[100px]"><div className="px-[20px] py-4 font-bold font-title">К продуктам</div></Button>
+          <Button className="mt-[100px]"><Link href={'/market'} className="block px-[20px] py-4 font-bold font-title">К продуктам</Link></Button>
         </div>
         <div className=" absolute top-0 left-0 h-full w-full bg-[black]">
           <Image src='/home/Worker-angle-grinder-metal-piece.png' fill={true} alt="Main Banner" objectFit="cover" className="md:object-[70%] opacity-60" />
