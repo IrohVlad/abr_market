@@ -1,0 +1,15 @@
+.product-card:hover .product-img::after{
+    transition-property: background-color;
+    transition-duration: .3s;
+    background-color: #00000020;
+}
+.product-card:hover .product-img img{
+    transition-property: transform;
+    transition-duration: .3s;
+    transform: scale(1.1);
+}
+.product-card:hover{
+    box-shadow: 1px 1px 5px rgb(179, 179, 179);
+    transition-property: box-shadow;
+    transition-duration: .3s;
+}

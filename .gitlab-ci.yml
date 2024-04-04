@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: docker:20.10.16
+  stage: build
+  services:
+    - docker:20.10.16-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/not-created/asify/frontend/asify:latest .
+
+deploy:
+  image: docker:20.10.16
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+  stage: deploy
+  services:
+    - docker:20.10.16-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/not-created/asify/frontend/asify:latest .
+    - docker push $CI_REGISTRY/not-created/asify/frontend/asify:latest
