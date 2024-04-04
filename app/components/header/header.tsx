@@ -1,39 +1,14 @@
 'use client'
 import {useEffect, useState} from 'react'
-import {Disclosure} from '@headlessui/react'
 import type { MenuProps } from 'antd';
 import './style.css'
-import { Dropdown } from 'antd';
 import {
     Bars3Icon,
-    InformationCircleIcon,
-    BriefcaseIcon,
-    UserIcon,
-    QuestionMarkCircleIcon,
-    ChatBubbleLeftEllipsisIcon,
-    GlobeAltIcon,
-    PaperAirplaneIcon
 } from '@heroicons/react/24/outline'
-import {ChevronDownIcon} from '@heroicons/react/20/solid'
-import Image from "next/image";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 
-const products = [
-    {name: 'Правила', href: '/policy', icon: InformationCircleIcon},
-    {name: 'Наши работы', href: '/portfolio', icon: BriefcaseIcon},
-    {name: 'Клиенты', href: '/clients', icon: UserIcon},
-    {name: 'Центр помощи', href: '/help', icon: ChatBubbleLeftEllipsisIcon},
-    {name: 'Частые вопросы', href: '/questions', icon: QuestionMarkCircleIcon},
-]
-const shipment = [
-    {name: 'Оформить отправление', href: '/shipment', icon: PaperAirplaneIcon},
-    {name: 'Где мы работаем', href: '/shipment/network', icon: GlobeAltIcon},
-]
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 
 export default function Example() {
@@ -95,12 +70,7 @@ export default function Example() {
     return (
         <header className="bg-white sticky z-50 top-0 left-0 text-black">
             <nav className="mx-auto flex max-w-7xl items-center justify-center p-6 h-16 lg:px-8 lg:justify-end" aria-label="Global">
-                {/* <div className="flex flex-1">
-                    <a href="/" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                        <Image src="/logo.svg" alt="logo" width={110} height={23}/>
-                    </a>
-                </div> */}
+
                 <div className="hidden lg:flex relative z-40" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                     <button
                         type="button"
@@ -124,33 +94,7 @@ export default function Example() {
                           className={`link ${pathname === '/market' ? 'text-black relative after:w-full after:block after:h-[4px] after:bg-orange after:absolute after:bottom-0' : ''} hover:text-black`}>
                         <span>Маркет</span>
                     </Link>
-                    <Dropdown 
-                            trigger={['click']}
-                            menu={menuProps1}
-                            >
-                            <div className={`link  hover:text-black flex items-center gap-x-1 cursor-pointer`}>
-                            Логистика
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400 text-orange" aria-hidden="true"/>
-                            </div>
-                    </Dropdown>
-                    <Dropdown 
-                            trigger={['click']}
-                            menu={menuProps2}
-                            >
-                            <div className={`link hover:text-black flex items-center gap-x-1 cursor-pointer`}>
-                            Информация
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400 text-orange" aria-hidden="true"/>
-                            </div>
-                    </Dropdown>
-                    
-                    <Link href="/services"
-                          className={`link ${pathname === '/services' ? 'text-black relative after:w-full after:block after:h-[4px] after:bg-orange after:absolute after:bottom-0' : ''} hover:text-black`}>
-                        <span>Услуги</span>
-                    </Link>
-                    <Link href="/blog"
-                          className={`link ${pathname === '/blog' ? 'text-black relative after:w-full after:block after:h-[4px] after:bg-orange after:absolute after:bottom-0' : ''} hover:text-black`}>
-                        <span>Блог</span>
-                    </Link>
+                
                 </div>
                 {/* <Link href={'/login'} className="flex flex-1 justify-end lg:hidden">
                     <button className="bg-light-red text-white w-24 h-9 rounded-lg font-semibold text-sm">Войти</button>
@@ -174,66 +118,7 @@ export default function Example() {
                                       className={`link ${pathname === '/market' ? 'text-black' : ''} hover:text-black -mx-3 block rounded-lg px-3 py-2`}>
                                     <span>Маркет</span>
                                 </Link>
-                                <Disclosure as="div" className="-mx-3 text-h-grey">
-                                    {({open}) => (
-                                        <>
-                                            <Disclosure.Button
-                                                className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5">
-                                                Логистика
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...shipment].map((item) => (
-                                                    <Disclosure.Button
-                                                        key={item.name}
-                                                        as="a"
-                                                        href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3"
-                                                    >
-                                                        {item.name}
-                                                    </Disclosure.Button>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-                                <Disclosure as="div" className="-mx-3">
-                                    {({open}) => (
-                                        <>
-                                            <Disclosure.Button
-                                                className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5">
-                                                Информация
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products].map((item) => (
-                                                    <Disclosure.Button
-                                                        key={item.name}
-                                                        as="a"
-                                                        href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3"
-                                                    >
-                                                        {item.name}
-                                                    </Disclosure.Button>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-                                <Link href="/services"
-                                      className={`link ${pathname === '/services' ? 'text-black' : ''} hover:text-black -mx-3 block rounded-lg px-3 py-2`}>
-                                    <span>Услуги</span>
-                                </Link>
-                                <Link href="/blog"
-                                      className={`link ${pathname === '/blog' ? 'text-black' : ''} hover:text-black -mx-3 block rounded-lg px-3 py-2`}>
-                                    <span>Блог</span>
-                                </Link>
+                                
                             </div>
                             <Link href={'/login'} className="py-6">
                                 <button className="bg-light-red text-white w-24 h-9 rounded-lg font-semibold text-sm">Войти</button>

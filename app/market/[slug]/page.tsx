@@ -46,11 +46,12 @@ export default async function Page({params, searchParams}: any) {
                 <div className='py-[10px] px-[15px] rounded-[7px] bg-bg-grey max-w-[250px] w-full flex flex-col justify-between 2lg:hidden lg:flex md:hidden'>
                   <div>
                     <div className='text-sm font-text font-semibold text-black mb-2'>Характеристики</div>
-                    <div className='text-black font-text text-sm leading-[26px]'>
-                    Тип корпуса: классический <br/> Материал корпуса: титан<br/>Степень защиты: IP68<br/>Количество SIM-карт: 2<br/>Тип SIM-карты: nanoSim<br/>Вес: 187 г<br/>Размеры (ШxВxТ): 70.6x146.6x8.25 мм
+                    <div className='text-black font-text text-sm leading-[26px] oc'>
+                    {product?.data.attributes.description}
+                
                     </div>
                   </div>
-                  <a className=' text-[#3891E3] font-text font-medium text-sm' href='#stats'>Все характеристики</a>
+                  {/* <a className=' text-[#3891E3] font-text font-medium text-sm' href='#stats'>Все характеристики</a> */}
                 </div>
               </div>
               
