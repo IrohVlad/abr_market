@@ -37,7 +37,7 @@ export default async function Market({searchParams}: Record<'searchParams', Read
   return (
     <>
       <MarketNavbar searchParams={searchParams}/>
-      <MarketHero image_url='/market/asian-engineer-manufacturing-industrial-product-2022-09-27-18-03-21-utc 1.png'>
+      <MarketHero image_url='/market/more.png'>
         <div className=' text-white font-title font-semibold text-xl md:text-lg'>
           <div className='mb-6'>Доставка промышленой техники для всех</div>
           <div>Скидка до 45%</div>
@@ -62,7 +62,6 @@ export default async function Market({searchParams}: Record<'searchParams', Read
                     >
       <section className='py-6 lg:py-8'>
         <div className='relative max-w-c-full m-auto px-6 lg:px-8 min-h-[100vh]'>
-          {/* <MarketSidebar searchParams={searchParams}/> */}
           <MarketProducts data={data}/>
         </div>
       </section>

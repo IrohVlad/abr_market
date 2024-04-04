@@ -45,13 +45,13 @@ export default function VisionContent({img_url, description, list, button}: IPro
                         </div>
                         <ul className='text-[black] font-semibold font-title text-[18px] mt-10'>
                             {list?.map((value, index)=>{
-                                return <li key={value} className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red mt-6'>{value}</li>
+                                return <li key={value} className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-orange mt-6'>{value}</li>
                             })}
                         </ul>
-                        <div className='mt-20 flex'>
+                        {/* <div className='mt-20 flex'>
                             <Button className='px-4 py-3 mr-[30px] min-w-[100px]'><div className=' font-title font-semibold text-center'>{button}</div></Button>
                             <Image src='/red-arrow.svg' alt='Red Arrow' width={33} height={10}/>
-                        </div>
+                        </div> */}
                     </div>
                     {img_url && <div className='h-[474px] lg:w-auto flex-1 relative ss:h-[274px]'>
                         <Image src={img_url} alt="Warehouse" fill  className='w-full h-full object-cover object-center relative' />

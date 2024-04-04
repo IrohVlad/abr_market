@@ -124,7 +124,7 @@ export default function MarketNavbar({searchParams}: Record<'searchParams', any>
   const CategoryChange = (value: string) => {
     const params = new URLSearchParams()
         Object.keys(searchParams).forEach((value: string) => {
-            searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
+            searchParams[value] && value != 'take' && value != 'skip' && value != 'page' ? params.append(value, searchParams[value]) : ''
         })
       if(value){
         params.set('category' , value)

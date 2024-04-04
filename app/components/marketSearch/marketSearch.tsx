@@ -9,7 +9,7 @@ export default function MarketSearch({searchParams}: any) {
   const onSearch = (value: any) => {
     const params = new URLSearchParams()
         Object.keys(searchParams).forEach((value: string) => {
-            searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
+            searchParams[value] && value != 'take' && value != 'skip' && value != 'page' ? params.append(value, searchParams[value]) : ''
         })
     if(value){
         params.set( 'name' , value)
