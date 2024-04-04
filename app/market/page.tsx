@@ -61,8 +61,8 @@ export default async function Market({searchParams}: Record<'searchParams', Read
                         }}
                     >
       <section className='py-6 lg:py-8'>
-        <div className='relative max-w-c-full m-auto px-6 lg:px-8 grid grid-cols-[300px_1fr] gap-[25px] md:grid-cols-1'>
-          <MarketSidebar searchParams={searchParams}/>
+        <div className='relative max-w-c-full m-auto px-6 lg:px-8 min-h-[100vh]'>
+          {/* <MarketSidebar searchParams={searchParams}/> */}
           <MarketProducts data={data}/>
         </div>
       </section>
