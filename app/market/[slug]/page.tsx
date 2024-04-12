@@ -32,10 +32,25 @@ export default async function Page({params, searchParams}: any) {
                 <div>
                   <div className='font-text text-h-grey font-semibold mb-6'>
                     Цена:
-                    <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
-                      {product.price} <span>P</span>
-                    </div>
+                    { product.price ?
+                      <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
+                        {product.price} <span>P</span>
+                      </div> :
+                      <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
+                        Договорная
+                      </div>
+                    }
                   </div>
+                  <div className='bg-bg-grey py-3 px-10 rounded-md'>
+                        <ul className='mb-5'>
+                            <li className='font-text font-semibold text-black text-base'>
+                                <a className='block mb-2' href="mailto:den4881550@yandex.ru"> <div className='text-base text-orange relative top-2' >Почта</div> den4881550@yandex.ru</a>
+                                <a className='block mb-2' href="tel:+79164881550"><div className='text-base text-orange relative top-2' >Телефон</div>+79164881550</a>
+                                <a className='block' href="tel:+79164881804"><div className='text-base text-orange relative top-2' >Телефон 2</div>+79164881804</a>
+                            </li>
+                        </ul>
+                        <h3 className="text-plus font-title font-semibold text-black mb-2">Свяжитесь с нами для оформления</h3>
+                    </div>
                   {/* <ProductStats/> */}
                   {/* <AddToBasketButton id={product.id} name={product.name} price={product.price} image={product.pictureUrl} /> */}
                 </div>

@@ -12,13 +12,10 @@ const Footer = () => {
                         <span className="text-t-grey pl-4">All-TRADE</span>
                         <div className="flex gap-10">
                             <Link href="about" className="pb-3 hover:text-white"><span>О нас</span></Link>
-                            {/* <Link href="contacts" className="pb-3 hover:text-white"><span>Контакты</span></Link> */}
+                            <Link href="contacts" className="pb-3 hover:text-white"><span>Контакты</span></Link>
                             <Link href="market" className="pb-3 hover:text-white"><span>Товары</span></Link>
                         </div>
                         <div className="flex w-32 justify-between pr-4">
-                        <Link href="/">
-                            <Image src="/footer/telegram.svg" alt="Telegram" width="24" height="24"/>
-                        </Link>
                     </div>
                     
                     </div>

@@ -39,8 +39,8 @@ export default async function Market({searchParams}: Record<'searchParams', Read
       <MarketNavbar searchParams={searchParams}/>
       <MarketHero image_url='/market/more.png'>
         <div className=' text-white font-title font-semibold text-xl md:text-lg'>
-          <div className='mb-6'>Доставка промышленой техники для всех</div>
-          <div>Скидка до 45%</div>
+          <div className='mb-6'>Добро пожаловать</div>
+          <div></div>
         </div>
       </MarketHero>
       <ConfigProvider
