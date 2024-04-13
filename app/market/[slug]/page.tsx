@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 const GetProduct = async (params: any) => {
-  const response = await fetch(`https://all-trader.ru/api/products/${params.slug}?populate=*`, {next: {revalidate: 10}}).then((data) => data.json())
+  const response = await fetch(`https://all-trader.ru/api/products/${params.slug}?populate=*`, {next: {revalidate: 36}}).then((data) => data.json())
   return response
 }
 
