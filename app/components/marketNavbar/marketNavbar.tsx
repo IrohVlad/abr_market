@@ -66,7 +66,7 @@ const options = [
       },
       {
         value: 'belt corundum',
-        title: 'Керамические',
+        title: 'Коорундовые',
         children: [
           {
             value: 'belt corundum 140x230',
