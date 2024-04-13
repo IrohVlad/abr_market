@@ -26,7 +26,7 @@ const GetProducts = async (searchParams: any) => {
   if('name' in searchParams){
     params.append(`filters[$and][10][title][$containsi]`, searchParams.name)
   }
-  const response = await fetch(`https://all-trader.ru/api/products?${params}`, {next: {revalidate: 1000}}).then((data) => data.json())
+  const response = await fetch(`https://all-trader.ru/api/products?${params}`, {next: {revalidate: 36}}).then((data) => data.json())
 
   console.log(params, response)
   return response

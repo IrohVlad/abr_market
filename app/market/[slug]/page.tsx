@@ -32,9 +32,9 @@ export default async function Page({params, searchParams}: any) {
                 <div>
                   <div className='font-text text-h-grey font-semibold mb-6'>
                     Цена:
-                    { product.price ?
+                    { product?.data?.attributes?.price ?
                       <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
-                        {product.price} <span>P</span>
+                        {product?.data?.attributes?.price} <span>P</span>
                       </div> :
                       <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
                         Договорная
